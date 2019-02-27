@@ -13,3 +13,17 @@
 % make init
 % make run
 ```
+
+- **Host VMの方でインターフェイスを用意する**
+
+`/etc/docker/daemon.json`
+```
+{
+  "ipv6": true,
+  "fixed-cidr-v6": "172:0::/64"
+}
+```
+**fixed-cidr-v6は適宜編集(動作未確認)**
+
+その後、dockerdを再起動
+`$ sudo systemctl restart docker`
