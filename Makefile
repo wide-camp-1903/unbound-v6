@@ -1,11 +1,9 @@
-vlan4020 = ens160
-
 .PHONY: default
 default: run log
 
 .PHONY: init
 init: clean
-	docker network create --driver bridge --ipv6 --subnet=172:0::/64 -o parent=$(vlan4020) vlan4020v6
+	# docker network create --driver bridge --ipv6 --subnet=172:0::/64 -o parent=$(vlan4020) vlan4020v6
 	docker-compose build
 
 .PHONY: run
@@ -20,4 +18,3 @@ log:
 clean:
 	docker-compose kill
 	docker-compose rm -f
-	docker network rm vlan4020v6 || true
