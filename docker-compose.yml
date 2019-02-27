@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  dnsv6-internal-server:
+    build: .
+    # image: widecamp1903/unbound-v6
+    container_name: dnsv6-internal-server
+    restart: unless-stopped
+    ports:
+      - "2001:200:0:ff20::156:130:53:53/tcp"
+      - "2001:200:0:ff20::156:130:53:53/udp"
+    volumes:
+      - ./unbound/unbound.conf:/etc/unbound/unbound.conf:ro
+    networks:
+      internal_server:
+
+networks:
+  internal_server:
+    external:
+      name: vlan4020
