@@ -1,4 +1,4 @@
-**動きません！**
+**動きません！DockerでIPv6ネットワークを使う方法を調べないといけない**
 # WIP: unbound-v6
 - https://hub.docker.com/r/widecamp1903/unbound-v6
 - internal-serverでIPv6向けのフルサービスリゾルバを提供
