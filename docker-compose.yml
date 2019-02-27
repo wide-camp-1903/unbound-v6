@@ -2,8 +2,8 @@ version: '3'
 
 services:
   dnsv6-internal-server:
-    build: .
-    # image: widecamp1903/unbound-v6
+    # build: .
+    image: widecamp1903/unbound-v6
     container_name: dnsv6-internal-server
     restart: unless-stopped
     volumes:
